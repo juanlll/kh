@@ -1,25 +1,25 @@
 <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-  <title>Kevin herrera</title>
+<title>Kevin herrera</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
-  <!-- Custom fonts for this template -->
-  <link rel="stylesheet" href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}">
-  <link rel="stylesheet" href="{{asset('vendor/simple-line-icons/css/simple-line-icons.css')}}">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-  <!-- Plugin CSS -->
-  <link rel="stylesheet" href="{{asset('device-mockups/device-mockups.min.css')}}">
-  <!-- Custom styles for this template -->
-  <link href="{{asset('css/new-age.css')}}" rel="stylesheet">
-  <style type="text/css"></style>
+<!-- Custom fonts for this template -->
+<link rel="stylesheet" href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="{{asset('vendor/simple-line-icons/css/simple-line-icons.css')}}">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+<!-- Plugin CSS -->
+<link rel="stylesheet" href="{{asset('device-mockups/device-mockups.min.css')}}">
+<!-- Custom styles for this template -->
+<link href="{{asset('css/new-age.css')}}" rel="stylesheet">
+<style type="text/css"></style>
 
 </head>
 
@@ -47,7 +47,7 @@
             <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
           </li>
           @if(Auth::check())
-           <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="/admin">Admin</a>
           </li>
           @endif
@@ -74,17 +74,17 @@
           <img alt='' class='card-img-profile' src="{{asset('storage/'.setting('card-profile.logo') )}}" width="140" height="140">
           <h4 class='card-title'>
            {{setting('card-profile.title')}}
-            <small>{{setting('card-profile.description')}}</small>
-          </h4>
-          <div class='card-links'>
-            <a class='fa fa-dribbble' href='#'></a>
-            <a class='fa fa-twitter' href='#'></a>
-            <a class='fa fa-facebook' href='#'></a>
-          </div>
+           <small>{{setting('card-profile.description')}}</small>
+         </h4>
+         <div class='card-links'>
+          <a class='fa fa-dribbble' href='#'></a>
+          <a class='fa fa-twitter' href='#'></a>
+          <a class='fa fa-facebook' href='#'></a>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 </header>
 
@@ -118,8 +118,8 @@
 
             <div class="col-lg-6">
               <div class="feature-item" style="color: white;">
-              <!--   <i class="fa fa-camera fa-5x text-success" style="color: white;" ></i> -->
-              <img src="https://image.flaticon.com/icons/svg/786/786135.svg" width="64" height="64">
+                <!--   <i class="fa fa-camera fa-5x text-success" style="color: white;" ></i> -->
+                <img src="https://image.flaticon.com/icons/svg/786/786135.svg" width="64" height="64">
                 <h3>{{setting('services.1-name')}}</h3>
                 <p class="text-muted">{{setting('services.1-description')}}</p>
               </div>
@@ -127,7 +127,7 @@
 
             <div class="col-lg-6">
               <div class="feature-item">
-              <!--   <i class="fa fa-camera-retro text-primary"></i> -->
+                <!--   <i class="fa fa-camera-retro text-primary"></i> -->
                 <img src="https://image.flaticon.com/icons/svg/786/786104.svg" width="64" height="64">
                 <h3>{{setting('services.2-name')}}</h3>
                 <p class="text-muted">{{setting('services.2-description')}}</p>
@@ -140,108 +140,91 @@
 
             <div class="col-lg-6">
               <div class="feature-item">
-             <!--    <i class="fa fa-film text-primary"></i> -->
-             
-             <img src="https://image.flaticon.com/icons/svg/786/786121.svg" width="64" height="64">
-                <h3>{{setting('services.3-name')}}</h3>
-                <p class="text-muted">{{setting('services.3-description')}}</p>
-              </div>
+               <!--    <i class="fa fa-film text-primary"></i> -->
+
+               <img src="https://image.flaticon.com/icons/svg/786/786121.svg" width="64" height="64">
+               <h3>{{setting('services.3-name')}}</h3>
+               <p class="text-muted">{{setting('services.3-description')}}</p>
+             </div>
+           </div>
+
+
+           <div class="col-lg-6">
+            <div class="feature-item">
+              <!-- <i class="fa fa-video-camera text-primary"></i> -->
+              <img src="https://image.flaticon.com/icons/svg/786/786140.svg" width="64" height="64">
+              <h3>{{setting('services.4-name')}}</h3>
+              <p class="text-muted">{{setting('services.4-description')}}</p>
             </div>
-
-
-            <div class="col-lg-6">
-              <div class="feature-item">
-                <!-- <i class="fa fa-video-camera text-primary"></i> -->
-                <img src="https://image.flaticon.com/icons/svg/786/786140.svg" width="64" height="64">
-                <h3>{{setting('services.4-name')}}</h3>
-                <p class="text-muted">{{setting('services.4-description')}}</p>
-              </div>
-            </div>
-
           </div>
+
         </div>
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <div class="parallax-window2" data-parallax="scroll" data-image-src="{{asset('storage/'.setting('parallax.2-section') )}}"></div>
 
-<section class="contact bg-primary" id="portafolio" >
-   <div class="section-heading text-center">
-      <h2>Portafolio</h2>
-      <p class="text-muted">La calidad de tu servicio, depende de la calidad de tu personal.</p>
-      <hr>
-    </div>
+<section class="contact" id="portafolio" >
   <div class="container">
-    
-<div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content" style="background-color: #fdcc52;">
-       
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-       
-        <div class="modal-body">
-          <img src="" class="enlargeImageModalSource" style="width: 100%;">
-          <hr>
-          <div id="descripcion"></div>
-        </div>
-      </div>
+    <div class="row">
+      <div class="col-lg-12 my-auto">
+       <h2 class="section-heading">Portafolio</h2>
+       <hr>
+     </div>
+         @foreach ($categories as $cat)
+    <div class="col-md-4" style="height: 200px; margin: 5px; border-radius: 15px; background-image: url('storage/{{$cat->image}}');
+    background-size: 100%; padding: 0px;">
+    <div style="background-color: rgba(0,0,0,0.5); margin: 0px; border-radius: 15px;">
+      <a href="/page/{{$cat->slug}}">
+    <h2 style="color:white; line-height: 200px;">{{$cat->title}}</h2>
+    </a>
     </div>
-</div>
-
-<div class="row" style="margin-left: 0px; margin-right: 0px;">
-
-
-    @foreach ($categories as $cat)
-      <div class="col-md-4" 
-      style="height: 200px; margin: 5px; background-image: url('{{asset('/img/puente.jpg')}}');">
-          <h2>{{$cat->name}}</h2>
-        </div>
-@endforeach
-      
   </div>
-
-  </div>
- 
+  @endforeach
+   </div>
+ </div>
 </section>
+
 <div class="parallax-window3" data-parallax="scroll" data-image-src="{{asset('storage/'.setting('parallax.3-section') )}}"></div>
 
 <section class="contact bg-primary" id="contact">
-<div class="container">
+  <div class="container">
     <div class="row">
       <div class="col-lg-12 my-auto">
-      <h2 class="section-heading">Contacto</h2>
+        <h2 class="section-heading">Contacto</h2>
 
-       
-<center>
-      <!-- Name input-->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="name">Nombre</label>
-              <div class="col-md-9">
-                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
-              </div>
+
+        <center>
+          <!-- Name input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="name">Nombre</label>
+            <div class="col-md-9">
+              <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
             </div>
-            <!-- Email input-->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="email">Correo electronico</label>
-              <div class="col-md-9">
-                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
-              </div>
+          </div>
+          <!-- Email input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="email">Correo electronico</label>
+            <div class="col-md-9">
+              <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
             </div>
-            <!-- Message body -->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="message">Mensaje</label>
-              <div class="col-md-9">
-                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
-              </div>
+          </div>
+          <!-- Message body -->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="message">Mensaje</label>
+            <div class="col-md-9">
+              <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
             </div>
-    <button type="submit" class="btn btn-primary " style="background-color: black">Enviar</button>   
-</center>
-    
-     </div>
-   </div>
- </div>
+          </div>
+          <button type="submit" class="btn btn-primary " style="background-color: black">Enviar</button>   
+        </center>
+
+      </div>
+    </div>
+  </div>
 
 </section>
 
@@ -273,9 +256,9 @@
 <script src="{{asset('js/parallax.min.js')}}"></script>
 <script type="text/javascript">
 
-$('.parallax-window1').parallax({imageSrc: "{{asset('storage/'.setting('parallax.1-section') )}}"});
-$('.parallax-window2').parallax({imageSrc: "{{asset('storage/'.setting('parallax.2-section') )}}"});
-$('.parallax-window3').parallax({imageSrc: "{{asset('storage/'.setting('parallax.3-section') )}}"});
+  $('.parallax-window1').parallax({imageSrc: "{{asset('storage/'.setting('parallax.1-section') )}}"});
+  $('.parallax-window2').parallax({imageSrc: "{{asset('storage/'.setting('parallax.2-section') )}}"});
+  $('.parallax-window3').parallax({imageSrc: "{{asset('storage/'.setting('parallax.3-section') )}}"});
 </script>
 </body>
 

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-	$categories = App\Category::all();
+	$categories = App\Page::all();
     return view('welcome',['categories'=> $categories]);
 });
 
@@ -29,8 +29,9 @@ Route::get('post/{slug}', function($slug){
 
 
 Route::get('page/{slug}', function($slug){
+	$posts = App\Post::all();
 	$page = App\Page::where('slug', '=', $slug)->firstOrFail();
-	return view('page', compact('page'));
+	return view('page', ['page'=>$page,'posts'=>$posts]);
 });
 
 
