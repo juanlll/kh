@@ -6,11 +6,11 @@
   <title>Kevin herrera</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{asset('vendor/simple-line-icons/css/simple-line-icons.css')}}">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
@@ -191,29 +191,15 @@
 </div>
 
 <div class="row" style="margin-left: 0px; margin-right: 0px;">
-        <div class="col-md-4" style=" padding-bottom: 30px;">
-          <img style="width:100%; height:200px;" src="{{asset('/img/bombillos.jpg')}}">
-        </div>
 
-        <div class="col-md-4" style=" padding-bottom: 30px;">
-          <img style="width:100%; height:200px;" src="{{asset('/img/bombillos.jpg')}}">
-        </div>
 
-        <div class="col-md-4" style=" padding-bottom: 30px;">
-          <img style="width:100%; height:200px;" src="./img/puente.jpg">
+    @foreach ($categories as $cat)
+      <div class="col-md-4" 
+      style="height: 200px; margin: 5px; background-image: url('{{asset('/img/puente.jpg')}}');">
+          <h2>{{$cat->name}}</h2>
         </div>
-
-         <div class="col-md-4" style=" padding-bottom: 30px;">
-          <img style="width:100%; height:200px;" src="{{asset('/img/bombillos.jpg')}}">
-        </div>
-
-        <div class="col-md-4" style=" padding-bottom: 30px;">
-          <img style="width:100%; height:200px;" src="{{asset('/img/bombillos.jpg')}}">
-        </div>
-
-        <div class="col-md-4" style=" padding-bottom: 30px;">
-          <img style="width:100%; height:200px;" src="{{asset('/img/puente.jpg')}}">
-        </div>
+@endforeach
+      
   </div>
 
   </div>
@@ -286,13 +272,6 @@
 <script src="{{asset('js/new-age.min.js')}}"></script>
 <script src="{{asset('js/parallax.min.js')}}"></script>
 <script type="text/javascript">
-$(function() {
-      $('img').on('click', function() {
-      $('.enlargeImageModalSource').attr('src', $(this).attr('src'));
-      $('#enlargeImageModal').modal('show');
-      document.getElementById("descripcion").innerHTML = "<h1>hola mundo1</h1>";
-    });
-});
 
 $('.parallax-window1').parallax({imageSrc: "{{asset('storage/'.setting('parallax.1-section') )}}"});
 $('.parallax-window2').parallax({imageSrc: "{{asset('storage/'.setting('parallax.2-section') )}}"});
