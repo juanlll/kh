@@ -29,9 +29,67 @@ Route::get('post/{slug}', function($slug){
 
 
 Route::get('page/{slug}', function($slug){
-	$posts = App\Post::all();
 	$page = App\Page::where('slug', '=', $slug)->firstOrFail();
+	$posts = App\Post::where('excerpt','=',$page->excerpt)->get();
 	return view('page', ['page'=>$page,'posts'=>$posts]);
 });
 
 
+Route::get('/blog', function () {
+	$posts = App\Post::all();
+    return view('blog',['posts'=> $posts]);
+});
+
+Route::get('api/images',function(){
+	$pila = [];
+function showFiles($path){
+    $dir = opendir($path);
+    $files = array();
+    while ($current = readdir($dir)){
+        if( $current != "." && $current != "..") {
+            if(is_dir($path.$current)) {
+                showFiles($path.$current.'/');
+            }
+            else {
+                array_push($files, ['name' => "/storage/images/".$current]);
+            }
+        }
+    }
+    
+
+    return $files;
+}
+
+
+
+
+
+
+return showFiles('./storage/images');
+
+});
+
+
+
+
+
+
+
+
+Route::get('api/imgs',function(){
+	$pila = [];
+	$path = "./storage/images";
+    $dir = opendir($path);
+    $files = array();
+    while ($current = readdir($dir)){
+        if( $current != "." && $current != "..") {
+            if(is_dir($path.$current)) {
+                showFiles($path.$current.'/');
+            }
+            else {
+                $files[] = "/storage/images/".$current;
+            }
+        }
+    }
+    return $files;
+});

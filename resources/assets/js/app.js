@@ -1,22 +1,26 @@
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-require('./bootstrap');
-
 window.Vue = require('vue');
+import axios from 'axios';
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+import VueImg from 'v-img';
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.use(VueImg);
+
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data:{images:[]},
+    created:function(){
+    	this.getImages();
+    },
+    methods:{
+    	getImages:function(){
+    	axios.get('api/images').then(response =>{
+    		this.images = response.data;
+    	}).catch(error =>{
+    		alert('error');
+    	});
+    	}
+    }
 });
+
+

@@ -43,6 +43,11 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#portafolio">Portafolio</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/blog">Blog</a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
           </li>
@@ -89,13 +94,16 @@
 </header>
 
 <section class="download text-center" id="download">
-  <div class="container">
+  <div class="container" id="app">
     <div class="row">
       <div class="col-lg-12 my-auto">
        <h2 class="section-heading">¿Quien soy?</h2>
 
        <p>Soy  un multifacético hombre de 22 años, ibaguereño de nacimiento, politólogo de profesión, pero fotógrafo por pasión, veo la fotografía como el arte que permite plasmar de manera tangible las maravillas de la creación que nos rodea. 
        Soy hijo y hermano, encuentro inspiración para mi trabajo en cada persona que está cerca, en cada situación, en cada paisaje que me rodea.</p>
+
+<img v-for="image in images" v-img :src="image.name" width="30%" height="30%">
+
      </div>
    </div>
  </div>
@@ -175,7 +183,7 @@
        <hr>
      </div>
          @foreach ($categories as $cat)
-    <div class="col-md-4" style="height: 200px; margin: 5px; border-radius: 15px; background-image: url('storage/{{$cat->image}}');
+    <div class="col-md-4" style="height: 200px; border-radius: 15px; background-image: url('storage/{{$cat->image}}');
     background-size: 100%; padding: 0px;">
     <div style="background-color: rgba(0,0,0,0.5); margin: 0px; border-radius: 15px;">
       <a href="/page/{{$cat->slug}}">
@@ -254,6 +262,7 @@
 <!-- Custom scripts for this template -->
 <script src="{{asset('js/new-age.min.js')}}"></script>
 <script src="{{asset('js/parallax.min.js')}}"></script>
+
 <script type="text/javascript">
 
   $('.parallax-window1').parallax({imageSrc: "{{asset('storage/'.setting('parallax.1-section') )}}"});
@@ -261,5 +270,6 @@
   $('.parallax-window3').parallax({imageSrc: "{{asset('storage/'.setting('parallax.3-section') )}}"});
 </script>
 </body>
+ <script  src="{{asset('js/app.js')}}"></script> 
 
 </html>

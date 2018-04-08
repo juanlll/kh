@@ -35,7 +35,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portafolio">Inicio</a>
+            <a class="nav-link js-scroll-trigger" href="/">Inicio</a>
           </li>
           @if(Auth::check())
            <li class="nav-item">

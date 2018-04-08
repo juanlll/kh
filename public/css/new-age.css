@@ -574,3 +574,22 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 .explore a {color: green; font-size: 13px;font-weight: 600}
 .twitter a {color:#4099FF}
 .img-box{box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);border-radius: 2px;border: 0;}
+
+.contpost {
+    margin-top: 10px;
+}
+.PostTitle {
+    padding: 5px;
+}
+.PostDate {
+    float: right;
+    font-size: 14px;
+    margin-top: -26px;
+    margin-right: 10px;
+
+}
+
+#titlePostDate{
+text-align: left;
+padding-left: 10px;
+}

@@ -1,23 +1,36 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Example Component</div>
-
-                    <div class="panel-body">
-                        I'm an example component!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div>
+    <gallery :images="images" :index="index" @close="index = null"></gallery>
+    <div
+      class="image"
+      v-for="(image, imageIndex) in images"
+      :key="imageIndex"
+      @click="index = imageIndex"
+      :style="{ 
+        backgroundImage: 'url(' + image + ')', 
+        width: '200px', 
+        height: '200px',
+        display: 'inline-block',
+        height: '100%',
+        width: 'auto',
+        maxWidth: 'none' }"
+    ></div>
+  </div>
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
-    }
-</script>
+  import VueGallery from 'vue-gallery';
+  
+  export default {
+    props:['images'],
+    data: function () {
+      return {
+        index: null
+      };
+    },
+
+    components: {
+      'gallery': VueGallery
+    },
+  }
+</script> 
