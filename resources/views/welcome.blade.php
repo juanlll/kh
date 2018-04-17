@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
 <!-- Plugin CSS -->
 <link rel="stylesheet" href="{{asset('device-mockups/device-mockups.min.css')}}">
 <!-- Custom styles for this template -->
@@ -27,30 +28,14 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"> {{setting('site.title')}}</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"> <img src="https://image.flaticon.com/icons/svg/786/786135.svg" width="20" height="20" style="vertical-align: top;"> {{setting('site.title')}}</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fa fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#download">¿Quien soy?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#features">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portafolio">Portafolio</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/blog">Blog</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
-          </li>
+          {{menu('site','nav')}}
           @if(Auth::check())
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="/admin">Admin</a>
@@ -61,18 +46,36 @@
     </div>
   </nav>
 
-  <header class="masthead">
+
+
+
+  <header class="masthead" style="background-image: url('{{asset('storage/'.setting('site.header'))}}');">
     <div class="container h-100">
       <div class="row h-100">
 
        <div class="col-lg-7 my-auto">
         <div class="header-content mx-auto">
-          <h1 class="mb-5">{{setting('site.description')}}</h1>
+          <h1 class="mb-5" style="font-size: 70px;">{{setting('site.description')}}</h1>
           <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Descubrir ahora!</a>
         </div>
       </div>
 
       <div class="col-lg-5 my-auto">
+
+  </div>
+</div>
+</div>
+</header>
+
+<section class="download text-center" id="download">
+  <div class="container" >
+    <div class="row">
+      <div class="col-lg-12 my-auto">
+       <h2 class="section-heading">¿Quien soy?</h2>
+       <p>Soy  un multifacético hombre de 22 años, ibaguereño de nacimiento, politólogo de profesión, pero fotógrafo por pasión, veo la fotografía como el arte que permite plasmar de manera tangible las maravillas de la creación que nos rodea.
+       Soy hijo y hermano, encuentro inspiración para mi trabajo en cada persona que está cerca, en cada situación, en cada paisaje que me rodea.</p>
+
+    <center>
        <div class='card card-profile text-center'>
         <img alt='' class='card-img-top' src="{{asset('storage/'.setting('card-profile.background') )}}" width="340" height="160">
         <div class='card-block'>
@@ -87,22 +90,8 @@
           <a class='fa fa-facebook' href='#'></a>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-</div>
-</header>
-
-<section class="download text-center" id="download">
-  <div class="container" id="app">
-    <div class="row">
-      <div class="col-lg-12 my-auto">
-       <h2 class="section-heading">¿Quien soy?</h2>
-
-       <p>Soy  un multifacético hombre de 22 años, ibaguereño de nacimiento, politólogo de profesión, pero fotógrafo por pasión, veo la fotografía como el arte que permite plasmar de manera tangible las maravillas de la creación que nos rodea. 
-       Soy hijo y hermano, encuentro inspiración para mi trabajo en cada persona que está cerca, en cada situación, en cada paisaje que me rodea.</p>
-
-<img v-for="image in images" v-img :src="image.name" width="30%" height="30%">
+      </div>
+  </center>
 
      </div>
    </div>
@@ -114,7 +103,7 @@
 <section class="features" id="features">
   <div class="container">
     <div class="section-heading text-center">
-      <h2>Servicios</h2>
+      <h1 style="font-size: 70px;">Servicios</h1>
       <p class="text-muted">La calidad de tu servicio, depende de la calidad de tu personal.</p>
       <hr>
     </div>
@@ -175,36 +164,54 @@
 
 <div class="parallax-window2" data-parallax="scroll" data-image-src="{{asset('storage/'.setting('parallax.2-section') )}}"></div>
 
+
 <section class="contact" id="portafolio" >
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 my-auto">
-       <h2 class="section-heading">Portafolio</h2>
-       <hr>
-     </div>
-         @foreach ($categories as $cat)
-    <div class="col-md-4" style="height: 200px; border-radius: 15px; background-image: url('storage/{{$cat->image}}');
-    background-size: 100%; padding: 0px;">
-    <div style="background-color: rgba(0,0,0,0.5); margin: 0px; border-radius: 15px;">
-      <a href="/page/{{$cat->slug}}">
-    <h2 style="color:white; line-height: 200px;">{{$cat->title}}</h2>
-    </a>
-    </div>
+<h1 style="font-size: 70px;">Portafolio</h1>
+      <p class="text-muted">{{setting('portafolio.description')}}</p>
+ <div class="container">
+<div class="col-md-12">
+<div class="row">
+<hr>
+
+  <div class="gal">
+
+  <!--  @foreach($files as $file)
+         <img src="{{asset($file)}}" alt="">
+    @endforeach
+   -->
+    {!!setting('portafolio.movies')!!}
+  
+        
   </div>
-  @endforeach
-   </div>
- </div>
+  
+</div>
+</div>
+</div>
+
 </section>
 
+
 <div class="parallax-window3" data-parallax="scroll" data-image-src="{{asset('storage/'.setting('parallax.3-section') )}}"></div>
+
 
 <section class="contact bg-primary" id="contact">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 my-auto">
-        <h2 class="section-heading">Contacto</h2>
+        <h1 class="section-heading" style="font-size: 70px;">Contacto</h1>
+              <p class="text-muted">La calidad de tu servicio, depende de la calidad de tu personal.</p>
+  @if (count($errors)>0)
+      <div class="alert alert-danger">
+        <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+        @endforeach
+        </ul>
+      </div>
+      @endif
 
-
+    {!! Form::open(['url' => '/postcomment','method'=>'POST']) !!}
+            {{Form::token()}}
         <center>
           <!-- Name input-->
           <div class="form-group">
@@ -222,14 +229,14 @@
           </div>
           <!-- Message body -->
           <div class="form-group">
-            <label class="col-md-3 control-label" for="message">Mensaje</label>
+            <label class="col-md-3 control-label" for="text">Mensaje</label>
             <div class="col-md-9">
-              <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+              <textarea class="form-control" id="message" name="text" placeholder="Please enter your message here..." rows="5"></textarea>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary " style="background-color: black">Enviar</button>   
+          <button type="submit" class="btn btn-primary " style="background-color: black">Enviar</button>
         </center>
-
+   {!!Form::close()!!}
       </div>
     </div>
   </div>
@@ -270,6 +277,6 @@
   $('.parallax-window3').parallax({imageSrc: "{{asset('storage/'.setting('parallax.3-section') )}}"});
 </script>
 </body>
- <script  src="{{asset('js/app.js')}}"></script> 
+ <script  src="{{asset('js/app.js')}}"></script>
 
 </html>

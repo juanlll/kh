@@ -23,7 +23,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="background-color: black;">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
@@ -47,24 +47,22 @@
     </div>
   </nav>
 
-<div class="parallax-window1" data-parallax="scroll" data-image-src="{{asset('storage/'.setting('parallax.1-section') )}}"></div>
-
-
-<section class="download text-center" id="download">
-  <div class="container">
-    <div class="row">
+ <div class="container">
+  <br>
+   <br>
+    <br>
+     <br>
+    <div class="row" style="background-color: white;">
       <div class="col-lg-12 my-auto">
-          @yield('main-content')
+        @yield('main-content')
      </div>
    </div>
+
+    <br>
+   <br>
+    <br>
+     <br>
  </div>
-</section>
-
-
-
-<div class="parallax-window2" data-parallax="scroll" data-image-src="{{asset('storage/'.setting('parallax.2-section') )}}"></div>
-
-
 
 
 
@@ -94,13 +92,7 @@
 <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 <!-- Custom scripts for this template -->
 <script src="{{asset('js/new-age.min.js')}}"></script>
-<script src="{{asset('js/parallax.min.js')}}"></script>
-<script type="text/javascript">
 
-$('.parallax-window1').parallax({imageSrc: "{{asset('storage/'.setting('parallax.1-section') )}}"});
-$('.parallax-window2').parallax({imageSrc: "{{asset('storage/'.setting('parallax.2-section') )}}"});
-$('.parallax-window3').parallax({imageSrc: "{{asset('storage/'.setting('parallax.3-section') )}}"});
-</script>
 </body>
 
 </html>

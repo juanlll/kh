@@ -13,7 +13,39 @@
 
 Route::get('/', function () {
 	$categories = App\Page::all();
-    return view('welcome',['categories'=> $categories]);
+      $path = "./storage/images";
+    $dir = opendir($path);
+    $files = array();
+    while ($current = readdir($dir)){
+        if( $current != "." && $current != "..") {
+            if(is_dir($path.$current)) {
+                showFiles($path.$current.'/');
+            }
+            else {
+                $files[] = "/storage/images/".$current;
+            }
+        }
+    }
+    
+    return view('welcome',['categories'=> $categories,'files'=>$files]);
+});
+
+Route::get('/gallery', function () {
+    $path = "./storage/images";
+    $dir = opendir($path);
+    $files = array();
+    while ($current = readdir($dir)){
+        if( $current != "." && $current != "..") {
+            if(is_dir($path.$current)) {
+                showFiles($path.$current.'/');
+            }
+            else {
+                $files[] = "/storage/images/".$current;
+            }
+        }
+    }
+    
+    return view('gallery',['files'=>$files]);
 });
 
 
@@ -41,7 +73,7 @@ Route::get('/blog', function () {
 });
 
 Route::get('api/images',function(){
-	$pila = [];
+
 function showFiles($path){
     $dir = opendir($path);
     $files = array();
@@ -55,7 +87,7 @@ function showFiles($path){
             }
         }
     }
-    
+
 
     return $files;
 }
@@ -93,3 +125,5 @@ Route::get('api/imgs',function(){
     }
     return $files;
 });
+
+Route::post('/postcomment','CommentController@store');

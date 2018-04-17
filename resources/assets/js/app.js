@@ -8,7 +8,7 @@ Vue.use(VueImg);
 
 const app = new Vue({
     el: '#app',
-    data:{images:[]},
+    data:{images:[],num:0},
     created:function(){
     	this.getImages();
     },
@@ -19,8 +19,9 @@ const app = new Vue({
     	}).catch(error =>{
     		alert('error');
     	});
-    	}
+    },
+    paginate:function(id){
+      return this.images[id].name;
+    }
     }
 });
-
-
