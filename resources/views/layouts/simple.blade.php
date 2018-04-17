@@ -47,23 +47,8 @@
     </div>
   </nav>
 
- <div class="container">
-  <br>
-   <br>
-    <br>
-     <br>
-    <div class="row" style="background-color: white;">
-      <div class="col-lg-12 my-auto">
         @yield('main-content')
-     </div>
-   </div>
-
-    <br>
-   <br>
-    <br>
-     <br>
- </div>
-
+  
 
 
 

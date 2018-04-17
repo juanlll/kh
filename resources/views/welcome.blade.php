@@ -277,6 +277,6 @@
   $('.parallax-window3').parallax({imageSrc: "{{asset('storage/'.setting('parallax.3-section') )}}"});
 </script>
 </body>
- <script  src="{{asset('js/app.js')}}"></script>
+
 
 </html>
